@@ -31,24 +31,30 @@ scans.
 
 ### How did you plan the task?
 
+I planned a random movement by first learning about how to use the random generators in the STL. Then deciding on how to introduce randomness to the movement in the callback of a subscriber to the scan topic.
 ### what is your logic?
-
+When there is no obstacle detected (nothing on a distance less than 0.3), the robot moves forward and turns randomly cw or ccw. In case an obstacle is found the robot moves opposite to the obstacle's direction until it is far enough then continues. 
 ### What ROS REPs did you used?
+The general REP and c++ Rep.
 
 ### How we could increase the overall performance?
 
+Intoduce a distribution on the map and assign higher probabilities in directions that are not explored before.
+
 ### List the most time consuming problems you faced
+
+Tuning the delays and making sense of c++ vector iterators. 
 
 ---
 
 ### Demo
 Add unlisted youtube/drive video
 
-[Demo](yourlinkhere)
+[Demo](https://youtu.be/zcYE-ajUVS8)
 
-### Screenshot
+<!-- ### Screenshot
 
-[image](yourscreenshot)
+[image](yourscreenshot) -->
 
 ---
 
