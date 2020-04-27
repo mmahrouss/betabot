@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="betabot_square_away" name="do_sqr_client_small" type="do_sqr_client" args="0.5 2 2 1"/>
+</launch>

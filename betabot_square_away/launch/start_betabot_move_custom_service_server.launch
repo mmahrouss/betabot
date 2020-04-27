@@ -1,0 +1,5 @@
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find betabot_gazebo)/models"/>
+    <include file="$(find betabot_gazebo)/launch/betabot_empty_world.launch"/>
+    <node pkg="betabot_square_away" name="do_sqr_server" type="do_sqr_server"/>
+</launch>
