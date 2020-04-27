@@ -57,17 +57,16 @@ Follow where am I project from Udacity Software Robotics Engineer Nanodegree.
 ## Part I: Map (map_server)
 
 ###  In your own words how maps are represented in ROS?
-
-
+They are presented as PGM images, that have in the basic case values 0 and 255. They indicate whether theres an obsatcle or not. 
 ###  State 5 algorithm for SLAM and the ROS implementation
 
 | SLAM Algorithm | ROS implementation |
 |:--------------:|:------------------:|
 |     GMapping   |      gmapping      |
-|                |                    |
-|                |                    |
-|                |                    |
-|                |                    |
+|  tinySLAM      |   slam_constructor |
+|  vinySLAM      |   slam_constructor |
+|  mono-SLAM     |        https://github.com/rrg-polito/mono-slam           |
+|        Cartographer        |     cartographer               |
 
 ---
 
@@ -75,52 +74,57 @@ Follow where am I project from Udacity Software Robotics Engineer Nanodegree.
 
 ### In your own words how amcl works?
 
+It works by drawing particles from the probability distribution of the estimated position and then updates itself by selecting the most accurate particles then refining the probability distribution. ALbeit in a continuos fashion until the particles converge around the actual location.
+
 ### Is there other better approaches to localize your robot rather than amcl?
+
+SLAM, because it does not need a map.
 
 ### What are the amcl limitations or the fail cases?
 
-### Is amcl used in domain rather than Robotics?
+It fails if the provided map is not accurate. 
 
+### Is amcl used in domain rather than Robotics?
+MCMC: Markov chain Monte Carlo is an important statistical methods in simulations and modelling in Physics and many sciences. 
 ---
 
 ## Part III: Navigation (move_base)
 
 ### How many official local planner available in ROS?
-
+base_local_planner, carrot_planner and dwa_local_planner
 ### which local planner did you use?
-
+base_local_planner
 ### In your own words how the local planner you selected works?
-
+Given the global plan the local planner decides how to adhere and move according to that plan on the local scale/map.
 ### How many official global planner available in ROS?
-
+1 global_planner
 ### which global planner did you use?
-
+global_planner
 ### In your own words how the global planner you selected works?
-
+The global planners decides on a path to follow from the current position to the planned goal.
 
 ---
 
 ### State your suggestion increase the overall performance?
-
-
+Further tuning of  the parameters.
 ### List the most time consuming problems you faced
-
+Tuning the parameters
 ---
 
 ### Demos
 Add unlisted youtube/drive videos
 
-[Demo](yourlinkhere)
+[Demo](https://youtu.be/MUvWQHpdoZI)
 
 ### Screenshots
 1. rviz with all navigation launchers from turtulbot
+![image 1](img/rviz2.png)
 2. gazebo
-
-![image](yourscreenshot)
+![image 2](img/gazebo1.png)
 
 ---
 
-#### NAME:
-#### ID:
+#### NAME: Mohamed Adham Mahrous
+#### ID: 20160178
 
 ---
